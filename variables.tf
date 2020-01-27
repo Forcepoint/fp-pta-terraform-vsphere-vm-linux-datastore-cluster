@@ -65,7 +65,7 @@ variable "ipv4_address" {
   description = "The IPv4 address assigned to this network adapter. If left blank or not included, DHCP is used."
 }
 variable "ipv4_netmask" {
-  type = string
+  type = number
   default = null
   description = "The IPv4 subnet mask, in bits (example: 24 for 255.255.255.0)."
 }
@@ -79,7 +79,7 @@ variable "ipv6_address" {
   description = "The IPv6 address assigned to this network adapter. If left blank or not included, auto-configuration is used."
 }
 variable "ipv6_netmask" {
-  type = string
+  type = number
   default = null
   description = "The IPv6 subnet mask, in bits (example: 32)."
 }
@@ -87,46 +87,6 @@ variable "ipv6_gateway" {
   type = string
   default = null
   description = "The IPv6 Gateway to communicate with to get the DHCP address for the VM's network."
-}
-variable "win_product_key" {
-  type = string
-  default = null
-  description = "[WINDOWS ONLY] The product key for this virtual machine."
-}
-variable "win_full_name" {
-  type = string
-  default = null
-  description = "[WINDOWS ONLY] The full name of the user of this virtual machine. This populates the 'user' field in the general Windows system information. Default: Administrator."
-}
-variable "win_admin_password" {
-  type = string
-  default = null
-  description = "[WINDOWS ONLY] The administrator password for this virtual machine."
-}
-variable "win_dns_domain" {
-  type = string
-  default = null
-  description = "[WINDOWS ONLY] Network interface-specific DNS search domain for Windows operating systems."
-}
-variable "win_workgroup" {
-  type = string
-  default = null
-  description = "[WINDOWS ONLY] The workgroup name for this virtual machine. One of this or win_join_domain must be included. If used, this is generally set to 'WORKGROUP'."
-}
-variable "win_join_domain" {
-  type = string
-  default = null
-  description = "[WINDOWS ONLY] The domain to join for this virtual machine. One of this or win_workgroup must be included."
-}
-variable "win_domain_admin_user" {
-  type = string
-  default = null
-  description = "[WINDOWS ONLY] The user of the domain administrator used to join this virtual machine to the domain. Required if you are setting win_join_domain."
-}
-variable "win_domain_admin_password" {
-  type = string
-  default = null
-  description = "[WINDOWS ONLY] The password of the domain administrator used to join this virtual machine to the domain. Required if you are setting win_join_domain."
 }
 variable "nested_hv_enabled" {
   type = bool

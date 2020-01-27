@@ -60,28 +60,11 @@ resource "vsphere_virtual_machine" "vm" {
         time_zone = var.time_zone
       }
 
-      windows_options {
-        computer_name         = var.name
-        workgroup             = var.win_workgroup
-        join_domain           = var.win_join_domain
-        domain_admin_user     = var.win_domain_admin_user
-        domain_admin_password = var.win_domain_admin_password
-        product_key           = var.win_product_key
-        time_zone             = var.time_zone
-        full_name             = var.win_full_name
-        admin_password        = var.win_admin_password
-        auto_logon            = true
-        run_once_command_list = ["net user ${var.win_full_name} /active:yes"]
-        # https://github.com/terraform-providers/terraform-provider-vsphere/issues/118
-      }
-
       network_interface {
         ipv4_address    = var.ipv4_address
         ipv4_netmask    = var.ipv4_netmask
         ipv6_address    = var.ipv6_address
         ipv6_netmask    = var.ipv6_netmask
-        dns_domain      = var.win_dns_domain
-        dns_server_list = var.dns_server_list
       }
 
       ipv4_gateway    = var.ipv4_gateway

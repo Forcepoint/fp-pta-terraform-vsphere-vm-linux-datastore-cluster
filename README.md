@@ -1,6 +1,6 @@
-# vsphere-vm-datastore-cluster Terraform Module
+# vsphere-vm-linux-datastore-cluster Terraform Module
 
-This contains an abstracted resource for creating a virtual machine with a Linux or Windows OS
+This contains an abstracted resource for creating a virtual machine with a Linux OS
 on a datastore cluster instead of a specific datastore. See https://www.terraform.io/docs/providers/vsphere/r/virtual_machine.html
 
 See the [variables.tf](variables.tf) file for descriptions of each variable. If default is not listed,
